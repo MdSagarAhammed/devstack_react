@@ -1,0 +1,3 @@
+import type { Technology } from '../types/technology'
+import { XIcon } from './Icons'
+export function StackItem({tech,onRemove}:{tech:Technology;onRemove:(id:number)=>void}){return <div className="flex items-center gap-3 rounded-xl border border-slate-100 bg-slate-50/70 p-3"><img src={tech.icon} alt="" className="h-8 w-8 rounded-lg bg-white p-1.5"/><div className="min-w-0 flex-1"><p className="truncate text-xs font-extrabold text-slate-800">{tech.name}</p><p className="mt-0.5 text-[10px] font-semibold text-slate-400">{tech.category}</p></div><button onClick={()=>onRemove(tech.id)} aria-label={`Remove ${tech.name}`} className="grid h-7 w-7 place-items-center rounded-lg text-slate-400 hover:bg-white hover:text-rose-500"><XIcon className="h-3.5 w-3.5"/></button></div>}
